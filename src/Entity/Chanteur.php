@@ -56,6 +56,24 @@ class Chanteur
      */
     private $sexe;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numTel", type="bigint", length=20, nullable=false)
+     */
+    private $numTel;
+
+    /**
+     * @var \Style
+     *
+     * @ORM\ManyToOne(targetEntity="Style",cascade={"persist"})
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idStyle", referencedColumnName="id")
+     * })
+     */
+    private $idStyle;
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +138,31 @@ class Chanteur
 
         return $this;
     }
+
+    public function getNumTel(): ?int
+    {
+        return $this->numTel;
+    }
+
+    public function setNumTel(int $numTel): self
+    {
+        $this->numTel = $numTel;
+
+        return $this;
+    }
+
+    public function getIdStyle(): ?Style
+    {
+        return $this->idStyle;
+    }
+
+    public function setIdStyle(?Style $idStyle): self
+    {
+        $this->idStyle = $idStyle;
+
+        return $this;
+    }
+
     public function __toString()
     {
         return $this->id.'-'.$this->nomscene;

@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Controller;
-
 use App\Entity\Festival;
 use App\Form\FestivalType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 /**
  * @Route("/festival")
  */
@@ -44,7 +41,6 @@ class FestivalController extends AbstractController
 
             return $this->redirectToRoute('festival_index', [], Response::HTTP_SEE_OTHER);
         }
-
         return $this->renderForm('festival/new.html.twig', [
             'festival' => $festival,
             'form' => $form,

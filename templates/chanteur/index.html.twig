@@ -13,6 +13,8 @@
                 <th>Nom</th>
                 <th>Date Naissance</th>
                 <th>Sexe</th>
+                <th>Numéro de téléphone</th>
+                <th>Style</th>
                 <th>Voir</th>
                 <th>Editer</th>
 
@@ -27,6 +29,8 @@
                 <td>{{ chanteur.nom }}</td>
                 <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('d-m-Y') : '' }}</td>
                 <td>{{ chanteur.sexe }}</td>
+                <td>{{ chanteur.numTel }}</td>
+                <td>{{ chanteur.idStyle }}</td>
                 <td><a href="{{ path('chanteur_show', {'id': chanteur.id}) }}">Voir</a></td>
                 <td> <a href="{{ path('chanteur_edit', {'id': chanteur.id}) }}">Modifier</a></td>
 
