@@ -1,0 +1,21 @@
+{{ include('nav.html.twig')}}
+
+{% block stylesheets %}
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="page-wrapper bg-gra-02 p-t-20 p-b-50 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title">Contactez nous : </h1>
+
+                    {{ include('_formContact.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ asset('js/myscript.js') }}"></script>
+{% endblock %}
